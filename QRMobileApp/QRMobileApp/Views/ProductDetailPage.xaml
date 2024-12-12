@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRMobileApp.Views.ProductDetailPage"
+             Title="Ürün Detayı">
+    <StackLayout Padding="10">
+        <ListView x:Name="ProductsListView" 
+                  ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Name}" 
+                                   FontSize="20" 
+                                   TextColor="Black" />
+                            <!-- Ürün Adı -->
+                            <Label Text="{Binding Price}" 
+                                   FontSize="20" 
+                                   TextColor="Black" 
+                                   HorizontalOptions="EndAndExpand" />
+                            <!-- Fiyat -->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
