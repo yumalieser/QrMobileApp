@@ -30,16 +30,16 @@ namespace QRMobileApp.Views
         //}
         private async void Handle_OnScanResult(Result result)
         {
-            int urunId = int.Parse(result.Text); // QR kod içeriğini ürüne ait ID olarak kabul ediyoruz
+            //int urunId = int.Parse(result.Text); // QR kod içeriğini ürüne ait ID olarak kabul ediyoruz
 
-            var productService = new ProductService();
-            var urun = await productService.GetUrunById(urunId);
+            //var productService = new ProductService();
+            //var urun = await productService.GetUrunById(urunId);
 
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-                await DisplayAlert("Ürün Bilgileri", $"Ürün Adı: {urun.UrunAdi}\nFiyat: {urun.Fiyat}\nAçıklama: {urun.Aciklama}", "Tamam");
-                scannerView.IsScanning = false;
-            });
+            //Device.BeginInvokeOnMainThread(async () =>
+            //{
+            //    await DisplayAlert("Ürün Bilgileri", $"Ürün Adı: {urun.UrunAdi}\nFiyat: {urun.Fiyat}\nAçıklama: {urun.Aciklama}", "Tamam");
+            //    scannerView.IsScanning = false;
+            //});
         }
 
         protected override void OnAppearing()

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRMobileApp.Views.HomePage"
+             Title="Kolay Menu">
+    <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+        <!-- Karşılama Yazısı -->
+        <Label Text="Hoşgeldiniz! 
+               
+               Aşağıdan Restoranları ve Ürünleri görüntüleyebilir veya doğrudan QR okutarak menüye ulaşabilirsiniz." 
+               FontSize="24" 
+               TextColor="DarkBlue" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand" />
+
+        <!-- Restoranlar Butonu -->
+        <Button Text="Restoranlar" 
+                FontSize="18" 
+                BackgroundColor="#2196F3" 
+                TextColor="White" 
+                CornerRadius="10"
+                Clicked="OnRestaurantsClicked" />
+
+        <!-- QR Okut Butonu -->
+        <Button Text="QR Okut" 
+                FontSize="18" 
+                BackgroundColor="#4CAF50" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Margin="0,10,0,0"
+                Clicked="OnScanQRCodeClicked" />
+
+        <!-- Tüm Ürünler Butonu -->
+        <Button Text="Tüm Ürünler" 
+                FontSize="18" 
+                BackgroundColor="#FF9800" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Margin="0,10,0,0"
+                Clicked="OnAllProductsClicked" />
+    </StackLayout>
+</ContentPage>

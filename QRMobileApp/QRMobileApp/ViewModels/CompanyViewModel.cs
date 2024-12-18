@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace QRMobileApp.ViewModels
 {
-    public class AboutViewModel : BaseViewModel
+    public class CompanyViewModel : ContentView
     {
-        public AboutViewModel()
+        public CompanyViewModel()
         {
-         
+
         }
     }
 }

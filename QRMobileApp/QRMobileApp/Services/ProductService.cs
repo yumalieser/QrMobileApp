@@ -52,31 +52,5 @@ namespace QRMobileApp.Services
                 return false;
             }
         }
-
-        public async Task<List<Product>> GetAllProducts(string apiUrl)
-        {
-            try
-            {
-                var response = await _httpClient.GetStringAsync(apiUrl);
-                var firestoreResponse = JsonConvert.DeserializeObject<FirestoreResponse>(response);
-
-                if (firestoreResponse != null && firestoreResponse.Documents.Count > 0)
-                {
-                    return firestoreResponse.Documents.Select(doc => new Product
-                    {
-                        Name = doc.Fields.Name.StringValue,
-                        Price = doc.Fields.Price.IntegerValue != null ? Convert.ToInt32(doc.Fields.Price.IntegerValue) : 0 // Eğer IntegerValue null ise 0 olarak ayarla
-                    }).ToList();
-                }
-
-                return new List<Product>(); // Boş liste döndür
-            }
-            catch (Exception ex)
-            {
-                // Hata mesajını konsola yazdır
-                System.Diagnostics.Debug.WriteLine($"Hata: {ex.Message}");
-                return new List<Product>(); // Hata durumunda boş liste döndür
-            }
-        }
     }
 }

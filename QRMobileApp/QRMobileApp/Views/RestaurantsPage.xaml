@@ -1,0 +1,22 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRMobileApp.Views.RestaurantsPage"
+             Title="Şirketler">
+
+    <StackLayout>
+        <Label Text="Şirketler Listesi" FontSize="Large" HorizontalOptions="Center" />
+
+        <ListView ItemsSource="{Binding Companies}" CachingStrategy="RecycleElement">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding CompanyName}" FontSize="Medium" TextColor="Black" />
+                            <Label Text="{Binding CompanyID}" FontSize="Small" TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -13,7 +13,7 @@ namespace QRMobileApp
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Views.HomePage());
         }
 
         protected override void OnStart()
